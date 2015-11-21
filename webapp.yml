@@ -1,0 +1,25 @@
+server:
+  port: ${vcap.application.port:9900}
+
+zuul:
+  proxy:
+    mapping: /api
+    addProxyHeaders: true    
+    route:
+      account-service: /accounts
+      doge-service: /doges
+
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${vcap.services.eureka-service.credentials.uri:http://127.0.0.1:8761}/eureka/
+
+---
+spring:
+  profiles: cloud
+eureka:
+  instance:
+    hostname: ${APPLICATION_DOMAIN}
+    nonSecurePort: 80
