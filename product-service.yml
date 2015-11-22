@@ -1,11 +1,7 @@
-
-
 very-so-much: DI Swimlaney Awesomeness
-
 
 server:
   port: ${PORT:8089}
-
 
 eureka:
   client:
