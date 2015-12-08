@@ -1,4 +1,5 @@
-application:
+spring:
+  application:
     name: discovery-server
   profiles:
     active: dev
